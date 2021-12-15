@@ -1,0 +1,7 @@
+.todolist-container
+{
+    background-color: rgb(221, 243, 250);
+    width: 40%;
+    min-height: 500px;
+    margin: 0 auto;
+}
