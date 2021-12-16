@@ -3,6 +3,7 @@ import {FiEdit,FiDelete} from 'react-icons/fi';
 // import {MdOutlineDeleteOutline} from 'react-icons/md'
 import "./listrow.css";
 export const Listrow = ({item}) => {
+    console.log(item)
     return (
         <>
           <div className="listrow-container">

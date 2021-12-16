@@ -1,0 +1,59 @@
+.searchbar-container
+{
+    height:auto;
+    /* border: 2px solid white; */
+}
+
+input
+{
+    width: 250px;
+    height: 37px;
+    font-size: 20px;
+    border: transparent;
+    border-radius: 5px;
+    padding-left: 10px;
+    box-sizing: border-box;
+}
+input::placeholder
+{
+    color: rgb(156, 156, 156);
+}
+.buttons
+{
+    /* border: 2px solid black; */
+    width: 35%;
+    margin: 20px auto;
+    /* align-items: center; */
+    display: flex;
+    justify-content: space-between;
+}
+button{
+    border: transparent;
+    /* background-color: rgb(241, 37, 37); */
+    border-radius: 4px;
+    width: 60px;
+    color: white;
+    height: 33px;
+    font-size: 20px;
+}
+
+.btn-add
+{
+    background-color: rgb(1, 109, 1);
+}
+.btn-clear
+{
+    background-color: rgb(180, 3, 3);
+}
+
+.btn-add , .btn-clear
+{
+    cursor: pointer;
+    transition: 0.3s all;
+}
+
+.btn-add:hover , .btn-clear:hover
+{
+    transform: scale(1.1);
+    transition: 0.3s all;
+}

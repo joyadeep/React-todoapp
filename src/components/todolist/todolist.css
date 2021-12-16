@@ -1,7 +1,23 @@
 .todolist-container
 {
-    background-color: rgb(221, 243, 250);
+    background-color: rgb(193, 195, 255);
+    height: 100vh;
+    overflow: auto;
+}
+.todolist-content
+{
+    background-color: rgb(230, 230, 255);
+    color: white;
+    border-radius: 15px;
     width: 40%;
-    min-height: 500px;
-    margin: 0 auto;
+    height:500px ;
+    margin: 100px auto 0 auto;
+    text-align: center;
+    /* this is command */
+}
+.empty-list
+{
+    font-size: 20px;
+    color: black;
+    font-weight: 600;
 }

@@ -1,6 +1,6 @@
 {
-  "homepage": "https://joyadeep.github.io/React-todo",
   "name": "todo",
+  "homepage": "https://joyadeep.github.io/React-todoapp",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
