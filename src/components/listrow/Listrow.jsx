@@ -1,19 +1,28 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import {FiEdit,FiDelete} from 'react-icons/fi';
-// import {MdOutlineDeleteOutline} from 'react-icons/md'
+import { TodoContext } from '../../context/todoContext';
 import "./listrow.css";
+
 export const Listrow = ({item}) => {
-    console.log(item)
+    
+    const {removeTask,findTask}=useContext(TodoContext);
+    const handleDelete=()=>{
+        removeTask(item.id);
+        }
+
+    const handleEdit=()=>{
+        findTask(item.id);
+    }
+
+
     return (
         <>
           <div className="listrow-container">
               <div className="task">{item.task}</div>
               <div className="options">
-                  <div className="edit"> <FiEdit/> </div>
-                  <div className="delete"><FiDelete/></div>
-                  
-                  {/* <MdOutlineDeleteOutline/> */}
-              </div>
+                  <div className="edit" onClick={handleEdit}> <FiEdit/> </div>
+                  <div className="delete" onClick={handleDelete}><FiDelete/></div>
+                 </div>
           </div>
         </>
     )

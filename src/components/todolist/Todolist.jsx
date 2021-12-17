@@ -5,8 +5,7 @@ import { Listrow } from '../listrow/Listrow';
 import { Searchbar } from '../searchbar/Searchbar';
 
 export const Todolist = () => {
-    const {list}=useContext(TodoContext);
-    console.log(list);
+    const {list,removeTask}=useContext(TodoContext);
     
     return(
         <div className="todolist-container">
@@ -16,16 +15,12 @@ export const Todolist = () => {
 
               <Searchbar/>
 
-                {!list.length?<div className='empty-list'>Wohoo ! No list available</div>:<>
+                {!list.length?<div className='empty-list'>Wohoo ! No task available</div>:<>
                 {
                     list.map((item)=>{
                         return(
-                          //   <div className="item" key={item.id}>
-                                <Listrow item={item} key={item.id}/>
-                              //   {/* {item.task} */}
-  
-                          //   </div>
-                        )
+                                <Listrow item={item}  key={item.id}/>
+                          )
                     })
                 }
                 </>

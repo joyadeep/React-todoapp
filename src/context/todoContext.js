@@ -1,22 +1,38 @@
-import react, { createContext, useState } from 'react';
+import  { createContext, useState } from 'react';
 
 export const TodoContext=createContext();
 
 const TodoContextProvider=(props)=>{
 
-const [list,setList]=useState([{task:"plant trees",id:1},{task:"buy vegetables",id:2},{task:"visit office",id:3}]);
+const [list,setList]=useState([]);
+const [edit,setEdit]=useState(null);
 
 const addTask=(task)=>{
-    setList([...list,{task,id:Math.floor(Math.random()*100)}]);
-    console.log("task added successfully")
-}
+    setList([...list,{task,id:Math.floor(Math.random()*1000)}]);
+  }
 
 const clearAll=()=>{
     setList([]);
 }
 
+const removeTask=(id)=>{
+    setList(list.filter(task=>task.id !== id));
+}
+
+const findTask=(id)=>{
+    const foundtask=list.find(task=>task.id===id);
+    setEdit(foundtask);
+   }
+
+const editTask=(task,id)=>{
+   const newList=list.map(tlist=>tlist.id===id?{task,id}:tlist);
+    setList(newList);
+   setEdit(null);
+
+}
+
 return(
-        <TodoContext.Provider value={{list,addTask,clearAll}} >
+        <TodoContext.Provider value={{list,addTask,clearAll,removeTask,edit,findTask,editTask}} >
             {props.children}
         </TodoContext.Provider>
     )
